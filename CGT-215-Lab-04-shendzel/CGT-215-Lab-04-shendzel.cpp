@@ -6,6 +6,7 @@
 using namespace std;
 float A;
 float B;
+float C;
 
 void printMenu() {
 	cout << "Please select which operation you want to perform" << endl;
@@ -24,9 +25,9 @@ void factorial() {
 		cout << "Please enter a POSITIVE value this time" << endl;
 		return factorial();
 	}
-	long long factResult = 1;
+	long long factResult = 1; 
 	for (int i = 1; i <= A; ++i) {
-		factResult *= i;
+		factResult *= i; //I accidentally found out if you replace this with A it becomes exponential.
 		if (i > A - 1) {
 			cout << A << " = " << factResult << endl;
 		}
@@ -35,11 +36,28 @@ void factorial() {
 		}
 	}
 
-	
+
 
 }
 void Arithmetic() {
-	//yeahh idk
+	cout << "Arithmetic chosen" << endl;
+	cout << "Firstly, choose your starting number: ";
+	cin >> A;
+	cout << "Nextly, choose how many numbers will come after: ";
+	cin >> B;
+	cout << "lastly, choose the amount it will inrememnt by: ";
+	cin >> C;
+
+	long long ArtResult = 0;
+	for (int i = 0; i <= B; ++i) {
+		ArtResult += A;
+		cout << A << " + ";
+		A += C;
+		if (i == B) {
+			cout << " = " << ArtResult << endl;
+		}
+	}
+	cout << ArtResult;
 }
 void Geometric() {
 	//Ill return later
