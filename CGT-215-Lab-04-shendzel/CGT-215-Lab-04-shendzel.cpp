@@ -51,16 +51,40 @@ void Arithmetic() {
 	long long ArtResult = 0;
 	for (int i = 0; i <= B; ++i) {
 		ArtResult += A;
-		cout << A << " + ";
+		cout << A; //I thought I could use just use the + sign here but it caused the equation to go X + = Y so I couldnt do that.
 		A += C;
 		if (i == B) {
 			cout << " = " << ArtResult << endl;
 		}
+		else {
+			cout << " + ";
+		}
 	}
-	cout << ArtResult;
 }
 void Geometric() {
-	//Ill return later
+	cout << "Geometric chosen" << endl;
+	cout << "Firstly, choose your parameter a, the constant: ";
+	cin >> A;
+	cout << "Nextly, choose parameter r: ";
+	cin >> B;
+	cout << "lastly, choose how many elements in the series there are: ";
+	cin >> C;
+
+	long long GeoResult = A;
+	for (int i = 0; i < C; ++i) {
+		cout << A;
+		A = A * B;
+		GeoResult += A;
+
+
+		if (i == C - 1) {
+			cout << " = " << GeoResult << endl;
+		}
+		else {
+			cout << " + ";
+		}
+	}
+	cout << GeoResult;
 }
 int main() {
 	int choice;
